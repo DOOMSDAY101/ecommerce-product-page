@@ -46,7 +46,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Links
 
 - Solution URL: [Add solution URL here](https://github.com/DOOMSDAY101/ecommerce-profuct-page.git)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://ifeoluwa-ecommerce-page.netlify.app/)
 
 ## My process
 
