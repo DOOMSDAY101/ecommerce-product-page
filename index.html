@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta name="author" content="Sulaiman Ife">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+
+</head>
+<body>
+
+  
+    <header>
+      <div class="navigation">
+        <!--Structure for the mobile menu-->
+        <i class="mobile-menu"><img src="images/icon-menu.svg" alt="mobile menu logo"></i>
+        
+
+      <a href="#"><img src="images/logo.svg" alt="logo" class="img-logo"></a>
+
+      <!--Structure for the desktop menu-->
+      <nav class="nav-desktop">
+        <img src="images/icon-close.svg" alt="close icon" class="icon-close">
+        <ul>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      </div>
+      
+      <div class="user-profile">
+        <img src="images/icon-cart.svg" alt="cart icon" class="icon-cart">
+        <div class="amount-notification" style="display: none;"></div>
+        <div class="cart-box">
+          <h2>Cart</h2>
+          <div class="cart-text">
+            <p style="display: block;" class="cart-text-p">Your cart is empty</p>
+
+            <div class="cart-full" style="display: none;">
+              <img src="images/image-product-1-thumbnail.jpg" alt="thumbnail image" width="70px" height="70px" class="thumbnail-image">
+              <span>Fall Limited Edition Sneakers <br>$125.00 x</span>
+              <span class="number-mul"></span>
+              <span class="number-total-amount"> $0.00</span>
+              
+              <img src="images/icon-delete.svg" alt="delete icon" class="icon-delete">
+
+              <button type="button" class="checkout-button">Checkout</button>
+            </div>
+
+          </div>
+        </div>
+        <img src="images/image-avatar.png" alt="avatar image" class="avatar-profile">
+      </div>
+
+
+    </header>
+
+  <main class="container">
+
+    <!--Slide show container for mobile-->
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <img src="images/image-product-1.jpg" alt="image product 1" style="width: 100%; height: auto;" class="images">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/image-product-2.jpg" alt="image product 2" style="width: 100%; height: auto;" class="images">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/image-product-3.jpg" alt="image product 3" style="width: 100%; height: auto;" class="images">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/image-product-4.jpg" alt="image product 4" style="width: 100%; height: auto;" class="images">
+      </div>
+
+      <!--next and previous buttons-->
+      <button type="button" onclick="plusSlides(-1)" class="prev"></button>
+      <button type="button" onclick="plusSlides(1)" class="next"></button>
+    </div>
+
+    <!--structure for lightbox modal-->
+    <div class="row">
+      <div class="column">
+        
+        <div class="mySlided">
+        <img src="images/image-product-1.jpg" alt="product image" onclick="openModal();current(1)" class="hover-shadow image-product-all">
+      </div>
+
+        <div class="mySlided">
+          <img src="images/image-product-2.jpg" alt="image product" style="max-width: 350px;" class="image-product-all hover-shadow" onclick="openModal();current(2)">
+        </div>
+
+        <div class="mySlided">
+          <img src="images/image-product-3.jpg" alt="image product" style="max-width: 350px;" class="image-product-all hover-shadow" onclick="openModal();current(3)">
+        </div>
+
+        <div class="mySlided">
+          <img src="images/image-product-4.jpg" alt="image product" style="max-width: 350px;" class="image-product-all hover-shadow" onclick="openModal();current(4)">
+        </div>
+        
+      </div>
+      <!--Thumbnail image-->
+      <div class="thumbnail-current">
+        <div class="thumbnail-present">
+          <img src="images/image-product-1-thumbnail.jpg" alt="product image" class="demo1" style="width: 70px;" onclick="current(1)">
+        </div>
+        <div class="thumbnail-present">
+          <img src="images/image-product-2-thumbnail.jpg" alt="product image" class="demo1" style="width: 70px;" onclick="current(2)">
+        </div>
+        <div class="thumbnail-present">
+          <img src="images/image-product-3-thumbnail.jpg" alt="product image" class="demo1" style="width: 70px;" onclick="current(3)">
+        </div>
+        <div class="thumbnail-present">
+          <img src="images/image-product-4-thumbnail.jpg" alt="product image" class="demo1" style="width: 70px;" onclick="current(4)">
+        </div>
+      </div>
+    </div>
+    <!--The Modal/Lightbox-->
+    <div id="myModal" class="modal">
+      <span class="close cursor" onclick="closeModal()"><img src="images/icon-close.svg" alt="close icon" class="icon-close-modal"></span>
+
+      <div class="modal-content">
+        <div class="mySlide">
+          <img src="images/image-product-1.jpg" alt="image product" style="max-width: 450px;" class="image-product-all">
+        </div>
+
+        <div class="mySlide">
+          <img src="images/image-product-2.jpg" alt="image product" style="max-width: 450px;" class="image-product-all" >
+        </div>
+
+        <div class="mySlide">
+          <img src="images/image-product-3.jpg" alt="image product" style="max-width: 450px;" class="image-product-all" >
+        </div>
+
+        <div class="mySlide">
+          <img src="images/image-product-4.jpg" alt="image product" style="max-width: 450px;" class="image-product-all">
+        </div>
+
+        <!--next and previous button-->
+        <img src="images/icon-previous.svg" alt="previous icon" class="previous-modal-icon" onclick="plusSide(-1)">
+        <img src="images/icon-next.svg" alt="next icon" class="next-modal-icon" onclick="plusSide(1)">
+
+        <!--Thumbnail Image control-->
+        <div class="nop">
+        <div class="column">
+          <img src="images/image-product-1-thumbnail.jpg" alt="thumbnail image for modal" class="demo" onclick="current(1)" style="width: 70px;">
+        </div>
+
+        <div class="column">
+          <img src="images/image-product-2-thumbnail.jpg" alt="thumbnail image for modal" class="demo" onclick="current(2)" style="width: 70px;">
+        </div>
+
+        <div class="column">
+          <img src="images/image-product-3-thumbnail.jpg" alt="thumbnail image for modal" class="demo" onclick="current(3)" style="width: 70px;">
+        </div>
+
+        <div class="column">
+          <img src="images/image-product-4-thumbnail.jpg" alt="thumbnail image for modal" class="demo" onclick="current(4)" style="width: 70px;">
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!--div box for texts-->
+    <div class="descriptions">
+      <h1>SNEAKER COMPANY</h1>
+      <h3>Fall Limited Edition Sneakers</h3>
+      <p> These low-profile sneakers are your perfect casual  wear companion. Featuring a 
+        durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+
+        <div class="price">
+
+          <div class="product-amount">
+           <div class="current-amount">$125.00<span class="percent-off">50%</span></div>
+            <span class="former-price">$250.00</span>
+          </div>
+          
+          <!--div for amount of shoes-->
+          <div class="display-row">
+          <div class="amount-container">
+            
+            <div class="negative-sign"><img src="images/icon-minus.svg" alt="minus-icon"></div>
+            <div class="number"></div>
+            <div class="positive-sign"><img src="images/icon-plus.svg" alt="plus-icon"></div>
+
+          </div>
+
+          <!--button for add to cart -->
+          <button type="button" class="add-to-cart">Add to cart</button>
+        </div>
+
+        </div>
+    </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://twitter.com/Sulaiman_Ife">Sulaiman Ifeoluwa</a>.
+  </div>
+  
+</body>
+<script src="script.js"></script>
+</html>
